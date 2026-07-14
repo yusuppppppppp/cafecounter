@@ -1,0 +1,35 @@
+# Node
+node_modules
+.bun
+.next
+out
+dist
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Go
+bin/
+vendor/
+coverage.out
+
+# Coverage
+coverage/
+
+# Misc
+*.tmp
+*.temp
