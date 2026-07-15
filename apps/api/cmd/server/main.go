@@ -1,15 +1,8 @@
 package main
 
-import (
-	"log"
-
-	"github.com/gofiber/fiber/v2"
-)
+import "github.com/yusuppppppppp/cafecounter/apps/api/internal/app"
 
 func main() {
-	app := fiber.New()
-
-	log.Println("CafeCounter Api running in port:8080")
-
-	log.Fatal(app.Listen(":8080"))
+	app := app.New()
+	app.Start()
 }
