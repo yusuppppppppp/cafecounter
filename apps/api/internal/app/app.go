@@ -5,6 +5,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/yusuppppppppp/cafecounter/apps/api/configs"
+	"github.com/yusuppppppppp/cafecounter/apps/api/internal/middleware"
 	"github.com/yusuppppppppp/cafecounter/apps/api/internal/routes"
 )
 
@@ -16,6 +17,7 @@ type App struct {
 func New(cfg *configs.Config) *App {
 	server := fiber.New()
 
+	middleware.Register(server)
 	routes.Register(server)
 
 	return &App{
