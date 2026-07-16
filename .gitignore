@@ -1,9 +1,9 @@
 # Node
-node_modules
-.bun
-.next
-out
-dist
+node_modules/
+.bun/
+.next/
+out/
+dist/
 
 # Environment
 .env
@@ -29,6 +29,9 @@ coverage.out
 
 # Coverage
 coverage/
+
+# Turborepo
+.turbo/
 
 # Misc
 *.tmp

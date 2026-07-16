@@ -1,8 +1,14 @@
 package main
 
-import "github.com/yusuppppppppp/cafecounter/apps/api/internal/app"
+import (
+	"github.com/yusuppppppppp/cafecounter/apps/api/configs"
+	"github.com/yusuppppppppp/cafecounter/apps/api/internal/app"
+)
 
 func main() {
-	app := app.New()
-	app.Start()
+	cfg := configs.Load()
+
+	application := app.New(cfg)
+
+	application.Start()
 }
