@@ -7,9 +7,10 @@ import (
 )
 
 type Config struct {
-	AppName string
-	Env     string
-	Addr    string
+	AppName     string
+	Env         string
+	Addr        string
+	DataBaseURL string
 }
 
 func Load() *Config {
@@ -20,8 +21,9 @@ func Load() *Config {
 	}
 
 	return &Config{
-		AppName: os.Getenv("APP_NAME"),
-		Env:     os.Getenv("APP_ENV"),
-		Addr:    os.Getenv("APP_ADDR"),
+		AppName:     os.Getenv("APP_NAME"),
+		Env:         os.Getenv("APP_ENV"),
+		Addr:        os.Getenv("APP_ADDR"),
+		DataBaseURL: os.Getenv("DATABASE_URL"),
 	}
 }

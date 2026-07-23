@@ -8,24 +8,27 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/yusuppppppppp/cafecounter/apps/api/configs"
+	"github.com/yusuppppppppp/cafecounter/apps/api/internal/database"
 	"github.com/yusuppppppppp/cafecounter/apps/api/internal/middleware"
 	"github.com/yusuppppppppp/cafecounter/apps/api/internal/routes"
 )
 
 type App struct {
-	server *fiber.App
-	config *configs.Config
+	server   *fiber.App
+	config   *configs.Config
+	database *database.Database
 }
 
-func New(cfg *configs.Config) *App {
+func New(cfg *configs.Config, db *database.Database) *App {
 	server := fiber.New()
 
 	middleware.Register(server)
 	routes.Register(server)
 
 	return &App{
-		server: server,
-		config: cfg,
+		server:   server,
+		config:   cfg,
+		database: db,
 	}
 }
 
