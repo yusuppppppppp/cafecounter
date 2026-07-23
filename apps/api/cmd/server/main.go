@@ -17,6 +17,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	if err := db.Migrate(); err != nil {
+		log.Fatal(err)
+	}
+
 	application := app.New(cfg, db)
 
 	application.Start()
